@@ -50,8 +50,7 @@ class NegociacaoService{
             let negociacoes = periodos
                 .reduce((dados, periodo) => {
                     console.log("Uma vez");
-                    return dados.concat(periodo), []
-                });                
+                    return dados.concat(periodo)}, []);                
             return negociacoes;
         }).catch(erro => {
             throw new Error(erro);
