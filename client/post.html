@@ -47,10 +47,10 @@
                     .post('/negociacoes', negociacao)
                     .then(() => {                        
                         inputData.value = '';
-                            inputQuantidade.value = 1;
-                            inputValor.value = 0.0
-                            inputData.focus();
-                            alert("Negociação enviada com sucesso");
+                        inputQuantidade.value = 1;
+                        inputValor.value = 0.0
+                        inputData.focus();
+                        alert("Negociação enviada com sucesso");
                     })
                     .catch(erro => alert(`Não foi possível enviar a negociação: ${erro}`))
                 xhr = new XMLHttpRequest();
