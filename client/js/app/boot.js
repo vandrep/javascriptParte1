@@ -1,11 +1,20 @@
 'use strict';
 
-var _NegociacaoController = require('./controllers/NegociacaoController');
+System.register(['./controllers/NegociacaoController', './polyfill/fetch'], function (_export, _context) {
+  "use strict";
 
-require('./polyfill/fetch');
+  var currentInstance, negociacaoController;
+  return {
+    setters: [function (_controllersNegociacaoController) {
+      currentInstance = _controllersNegociacaoController.currentInstance;
+    }, function (_polyfillFetch) {}],
+    execute: function () {
+      negociacaoController = currentInstance();
 
-var negociacaoController = new _NegociacaoController.NegociacaoController();
 
-document.querySelector('.form').onsubmit = negociacaoController.adiciona.bind(negociacaoController);
-document.querySelector('[type=button]').onclick = negociacaoController.apaga.bind(negociacaoController);
+      document.querySelector('.form').onsubmit = negociacaoController.adiciona.bind(negociacaoController);
+      document.querySelector('[type=button]').onclick = negociacaoController.apaga.bind(negociacaoController);
+    }
+  };
+});
 //# sourceMappingURL=boot.js.map
