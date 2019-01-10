@@ -103,8 +103,4 @@ class NegociacaoService{
                 throw new Error("Não foi possível buscar negociações para importar");
             })
     }
-
-    isEquals(outraNegociacao){
-        return JSON.stringify(this) == JSON.stringify(outraNegociacao)
-    }
 }
